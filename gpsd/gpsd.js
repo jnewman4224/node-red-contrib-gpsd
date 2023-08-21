@@ -57,7 +57,7 @@ module.exports = function(RED) {
 		}
 
 		node.warnLogger = function(s) {
-			node.warn(s)
+			//node.warn(s)
 		}
 
 		node.errorLogger = function(s) {
