@@ -160,11 +160,11 @@ module.exports = function(RED) {
 			//Set UI status to disconnected
 			node.status({fill:"red",shape:"ring",text:"Disconnected: No fix"}) ;
 			
-			node.warn('Disconnected from gpsd') ;
+			//node.warn('Disconnected from gpsd') ;
 
 			// Let's attempt to reconnect to gpsd every 3 seconds (maybe it restarted)
 			node.reconnect = setInterval(function() {
-				node.warn('Attempting to reconnect to gpsd') ;
+				//node.warn('Attempting to reconnect to gpsd') ;
 				node.listener.connect(function() {
 
 					// Reset our interval timer for reconnecting
@@ -174,7 +174,7 @@ module.exports = function(RED) {
 
 						// Set UI status to connected
 						node.status({fill:"grey",shape:"ring",text:"No fix"}) ;
-						node.warn('Reconnected to gpsd') ;
+						//node.warn('Reconnected to gpsd') ;
 						
 						// Lets get back to watching for events again
 						node.listener.watch() ;
